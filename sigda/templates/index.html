@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Obras</li>
+  <li class="breadcrumb-item"><a href="#">Obras</a></li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Titulo</th>
+        <th>Categoria</th>
+        <th>Autor</th>
+        <th>Ano de publicacao</th>
+        <th>Data de criacao</th>
+        <th>Estado</th>   
+      </tr>
+    </thead>
+    <tbody>
+      {% for obra in obras %}
+        <tr>
+          <td>
+            <a href="">{{ obra.titulo }}</a>
+            <small class="text-muted d-block">{{ obra.resumo }}</small>
+          </td>
+          <td class="align-middle">{{ obra.categoria }}</td>
+          <td class="align-middle">{{ obra.autor }}</td>
+          <td class="align-middle">{{ obra.ano_publicacao }}</td>
+          <td class="align-middle">{{ obra.criado_em }}</td>
+          <td class="align-middle">{{ obra.estado }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
